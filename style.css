@@ -1,0 +1,230 @@
+:root{
+
+    --bg: #000000;
+
+    --bg400: #0d0216;
+    --bg300: #871939;
+    --bg200: #e24edb;
+    --bg100: #ffffff;
+    --shade: #871939;
+
+    --rad1: 100;
+    --rad2: 97;
+    --rad3: 90;
+    --rad4: 78;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--bg);
+    font-family: "Roboto Mono";
+    font-size: calc(16px * .8);
+}
+
+#container{
+    --cw: 120vw;
+    width: 100vw;
+    height: calc(var(--cw) + 120dvh);
+    overflow-x: hidden;
+
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+}
+
+#container div:nth-of-type(1){
+    --rad: var(--rad1);
+    --inner-shade: var(--shade);
+    --outer-shade: var(--bg100);
+    background-color: var(--outer-shade);
+
+    box-shadow: 0 0 280px 80px var(--inner-shade);
+    filter: blur(0px);
+}
+#container div:nth-of-type(2){
+    --rad: var(--rad2);
+    --inner-shade: var(--bg100);
+    --outer-shade: var(--bg200);
+    background-color: var(--outer-shade);
+}
+#container div:nth-of-type(3){
+    --rad: var(--rad3);
+    --inner-shade: var(--bg200);
+    --outer-shade: var(--bg300);
+    background-color: var(--outer-shade);
+}
+#container div:nth-of-type(4){
+    --rad: var(--rad4);
+    --inner-shade: var(--bg300);
+    --outer-shade: var(--bg400);
+    background-color: var(--outer-shade);
+}
+
+#container div{
+    position: absolute;
+
+    width: calc(var(--cw) * (var(--rad) / 100));
+    height: calc(var(--cw) * (var(--rad) / 100));
+
+    border-radius: 50%;
+
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    box-shadow: 0 0 40px var(--outer-shade),
+    inset 0 0 80px var(--inner-shade);
+
+    filter: blur(20px);
+}
+
+/* settings */
+
+#settings{
+    position: fixed;
+    display: flex;
+    padding: 25px;
+    gap: 20px;
+    height: 100%;
+
+
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.3);
+
+    transform: translateX(0);
+    transition: transform .3s ease;
+}
+
+#settings .main-options{
+    display: flex; flex-direction: column;
+    gap: 20px;
+    width: auto;
+}
+#settings .main-options .color-picker{
+    display: flex; flex-direction: column;
+    gap: 5px;
+    flex-wrap: wrap;
+    min-height: 325px;
+}
+#settings .main-options .color-picker>div{
+    position: relative;
+    display: flex;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+input[type="color"]::-moz-color-swatch {
+    border: none;
+}
+
+#settings .main-options .color-picker>div>input{
+    width: 100%;
+    height: 50px;
+    border: 2px solid white;
+    cursor: pointer;
+
+    border-radius: 25px;
+    border: 2px solid white;
+}
+#settings .main-options .color-picker>div>label{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px 10px;
+
+    width: 70%;
+    display: flex;
+    justify-content: center; align-items: center;
+
+    border-radius: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .6);
+
+    pointer-events: none;
+}
+#settings .main-options p{
+    font-weight: bold;
+}
+
+
+#settings p{
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5px 10px;
+
+    display: flex;
+    justify-content: center; align-items: center;
+    gap: 5px;
+    border-radius: 25px;
+}
+.aside, .more{
+    height: 100%;
+}
+
+.more,
+.range-input{
+    display: flex; flex-direction: column;
+    gap: 5px;
+}
+.range-input div{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.4);
+
+    padding-inline: 10px;
+    gap: 10px;
+    border-radius: 25px;
+
+}
+.range-input input{
+    cursor: grab;
+}
+
+#settings .main-options p:nth-of-type(2){
+    justify-content: space-between;
+    margin-top: auto;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#settings .main-options p:nth-of-type(2) span{
+    padding-inline: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    cursor: pointer;
+}
+#settings .main-options p:nth-of-type(2) span.deactivate{
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgb(241, 118, 118);
+    cursor: not-allowed;
+}
+
+#settings>p{
+    writing-mode: sideways-lr;
+}
+
+
+key{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding-inline: 10px;
+    font-weight: bold;
+    border-radius: 25px;
+}
