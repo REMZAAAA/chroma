@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHROMA 🪐</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div id="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div id="settings">
+        <div class="main-options">
+            <div class="color-picker">
+                <div>
+                    <input type="color" id="bg" name="bg">
+                    <label for="bg" id="bg">background</label>
+                </div>
+                <div>
+                    <input type="color" id="shade" name="shade">
+                    <label for="shade" id="shade">shade</label>
+                </div>
+                <div>
+                    <input type="color" id="bg100" name="bg100">
+                    <label for="bg100" id="bg100">edge</label>
+                </div>
+                <div>
+                    <input type="color" id="bg200" name="bg200">
+                    <label for="bg200" id="bg200">outer ring</label>
+                </div>
+                <div>
+                    <input type="color" id="bg300" name="bg300">
+                    <label for="bg300" id="bg300">inner ring</label>
+                </div>
+                <div>
+                    <input type="color" id="bg400" name="bg400">
+                    <label for="bg400" id="bg400">center</label>
+                </div>
+            </div>
+
+            <div class="more">
+                <p>MORE OPTIONS</p>
+
+                <div class="range-input">
+                    <div>
+                        <label for="rad1" id="rad1">bg100 radius</label>
+                        <input type="range" id="rad1" name="rad1" min="0" max="100">
+                    </div>
+                    <div>
+                        <label for="rad2" id="rad2">bg200 radius</label>
+                        <input type="range" id="rad2" name="rad2" min="0" max="100">
+                    </div>
+                    <div>
+                        <label for="rad3" id="rad3">bg300 radius</label>
+                        <input type="range" id="rad3" name="rad3" min="0" max="100">
+                    </div>
+                    <div>
+                        <label for="rad4" id="rad4">bg400 radius</label>
+                        <input type="range" id="rad4" name="rad4" min="0" max="100">
+                    </div>
+                </div>
+
+                <p>
+                    <span id="add">ADD</span>
+                    <span id="rem">REMOVE</span>
+                </p>
+            </div>
+        </div>
+
+        <p class="aside">Press <key>ESCAPE</key> to open and close the menu.</p>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
